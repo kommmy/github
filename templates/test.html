@@ -1,0 +1,11 @@
+$def with (num,total,html,titles)
+<hr/>
+<table border="1" style="margin-bottom: 20px" cellpadding="5" cellspacing="1" width="400" align="center">
+    <th>内容</th>
+    $for title in titles:
+    <tr><td>$title.title</td></tr>
+</table>
+$:html
+
+
+

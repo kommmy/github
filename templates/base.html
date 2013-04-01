@@ -1,0 +1,29 @@
+$def with (content)
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="allen" />
+    <meta http-equiv="expires" content="31 Dec 2008" />
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    $if 'title' in content and content.title:
+        <title>$content.title</title>
+    $else:
+        <title>WebProject</title>
+</head>
+
+<body>
+<div class=page>
+$if ('token' in cookie()) or session.get('auth') != 0:
+    $:markdown(u'|[注销](/logout)|[查看全部](/title/)')
+    <hr/>
+    $if session.get('auth') != 0:
+        <h1>你好 $session.get('auth')</h1>
+$else:
+    | <a href="/login">登录</a>
+    | <a href="/register">注册</a>
+
+$:content
+</div>
+</body>
+
+</html>

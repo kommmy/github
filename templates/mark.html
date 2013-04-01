@@ -1,0 +1,20 @@
+$def with (name,error)
+<form action="" method="POST">
+    $if error:
+        <input type="text" name="textedit"/><strong>$error</strong><br/>
+    $else:
+        <input type="text" name="textedit"/><br/>
+    <input type="submit" name="submit" value="Submit"/>
+</form>
+$name
+$:markdown('*notice!*')
+$:markdown('[URL](http://www.baidu.com)')
+$:markdown('    def print')
+<html>
+<head>
+    <title>home</title>
+</head>
+<body>
+
+</body>
+</html>

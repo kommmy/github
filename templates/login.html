@@ -1,0 +1,15 @@
+$def with (login,cur_user)
+<hr/>
+<h1>欢迎使用</h1>
+$if cur_user:
+        <h1>$cur_user注册成功！请登录</h1>
+<div class="mytable">
+<form method="post" action="" style="text-align: center">
+    $:login.render()
+    <input type="submit" name="submit" value="登录" style="margin-left: -40px">
+    <input type="checkbox" name="autoLogin" id="autoLogin" value="true" tabindex="4" />下次自动登录
+
+</form>
+</div>
+
+
